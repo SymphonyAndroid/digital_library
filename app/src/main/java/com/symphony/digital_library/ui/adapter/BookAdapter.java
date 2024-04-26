@@ -36,7 +36,7 @@ public class BookAdapter extends BaseRecyclerAdapter<ItemBookBinding> {
         Book item = items.get(position);
         binding.authorTv.setText(item.getAuthor());
         binding.titleTv.setText(item.getTitle());
-        binding.bookCl.setOnClickListener(it -> onBookClick.accept(item));
+        binding.takeItBtn.setOnClickListener(it -> onBookClick.accept(item));
     }
 
     public void updateItems(List<Book> newList) {

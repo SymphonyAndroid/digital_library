@@ -10,6 +10,8 @@ import io.reactivex.Completable;
 public class UserTakeBookUseCase implements UseCaseParams<UserBookCrossRef, Completable> {
     @Override
     public Completable invoke(UserBookCrossRef item) {
-        return ComponentProvider.Companion.getInstance().getCache(Database::getUserBookDao).insert(item);
+        return ComponentProvider.Companion.getInstance()
+                .getCacheWithAction(Database::getUserBookDao)
+                .completable(userBookCrossRefDao -> userBookCrossRefDao.insert(item));
     }
 }

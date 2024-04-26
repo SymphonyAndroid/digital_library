@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.symphony.digital_library.R;
 import com.symphony.digital_library.data.entity.Book;
@@ -64,6 +65,6 @@ public class TakeBookFragment
 
     @Override
     public void onFinishTakeBook() {
-        // TODO: 26.04.2024
+        NavHostFragment.findNavController(this).popBackStack();
     }
 }

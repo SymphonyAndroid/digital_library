@@ -7,11 +7,11 @@ import androidx.room.Room;
 
 import com.symphony.digital_library.component_provider.ComponentProvider;
 import com.symphony.digital_library.component_provider.components.AppSchedulers;
-import com.symphony.digital_library.component_provider.components.Cache;
+import com.symphony.digital_library.component_provider.components.CacheWithAction;
 import com.symphony.digital_library.component_provider.components.Preferences;
 import com.symphony.digital_library.component_provider.components.UseCases;
 import com.symphony.digital_library.component_provider.impl.database.AppDatabase;
-import com.symphony.digital_library.component_provider.impl.database.CacheImpl;
+import com.symphony.digital_library.component_provider.impl.database.CacheWithActionImpl;
 import com.symphony.digital_library.component_provider.impl.scheduler.SchedulersImpl;
 import com.symphony.digital_library.component_provider.components.Database;
 import com.symphony.digital_library.component_provider.impl.use_cases.UseCasesImpl;
@@ -56,8 +56,8 @@ public class ComponentProviderImpl implements ComponentProvider {
 
     @NonNull
     @Override
-    public <D extends BaseDao<T>, T> Cache<T> getCache(Function<Database, D> function) {
-        return new CacheImpl<>(function.apply(getDatabase()));
+    public <D extends BaseDao<R>, R> CacheWithAction<D, R> getCacheWithAction(Function<Database, D> function) {
+        return new CacheWithActionImpl<>(function.apply(getDatabase()));
     }
 
     @NonNull

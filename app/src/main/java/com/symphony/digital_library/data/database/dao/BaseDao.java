@@ -9,8 +9,6 @@ public interface BaseDao<T> {
 
     List<T> getAll();
 
-    List<T> findByQuery(String query);
-
     @Insert
     void insert(T value);
 

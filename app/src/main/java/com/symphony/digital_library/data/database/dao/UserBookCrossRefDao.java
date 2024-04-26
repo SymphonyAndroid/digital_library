@@ -14,7 +14,4 @@ public interface UserBookCrossRefDao extends BaseDao<UserBookCrossRef> {
     @Query("SELECT * FROM UserBookCrossRef")
     List<UserBookCrossRef> getAll();
 
-    @Override
-    @Query("SELECT * FROM UserBookCrossRef WHERE bookId LIKE :query OR userId LIKE :query")
-    List<UserBookCrossRef> findByQuery(String query);
 }

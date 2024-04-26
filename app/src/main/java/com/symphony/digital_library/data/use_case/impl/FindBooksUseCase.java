@@ -18,7 +18,9 @@ public class FindBooksUseCase implements UseCase<Single<List<Book>>> {
 
     @Override
     public Single<List<Book>> invoke() {
-        return ComponentProvider.Companion.getInstance().getCache(Database::getBookDao).findByQuery(query);
+        return ComponentProvider.Companion.getInstance()
+                .getCacheWithAction(Database::getBookDao)
+                .single(bookDao -> bookDao.findByQuery(query));
     }
 
 }

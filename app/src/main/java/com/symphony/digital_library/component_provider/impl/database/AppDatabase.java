@@ -13,7 +13,6 @@ import com.symphony.digital_library.data.entity.UserTakenBook;
                 Book.class,
                 User.class,
                 UserBookCrossRef.class,
-                UserTakenBook.class,
         },
         version = 1
 )

@@ -15,8 +15,4 @@ public interface UserDao extends BaseDao<User> {
     @Query("SELECT * FROM User")
     List<User> getAll();
 
-    @Override
-    @Query("SELECT * FROM User WHERE name LIKE :query OR phone LIKE :query")
-    List<User> findByQuery(String query);
-
 }

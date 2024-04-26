@@ -18,6 +18,7 @@ import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
+import io.reactivex.disposables.Disposable;
 
 public class FillingBooksInDatabaseUseCase implements UseCase<Completable> {
 
@@ -34,7 +35,13 @@ public class FillingBooksInDatabaseUseCase implements UseCase<Completable> {
             return new Gson().fromJson(reader, new TypeToken<List<Book>>() { });
         })
                 .subscribeOn(getProvider().getSchedulers().io())
-                .flatMapCompletable(it -> getProvider().getCache(Database::getBookDao).insertAll(it));
+                .flatMapCompletable(this::insert);
+    }
+
+    private Completable insert(List<Book> books) {
+        return getProvider()
+                .getCacheWithAction(Database::getBookDao)
+                .completable(bookDao -> bookDao.insert(books));
     }
 
     private ComponentProvider getProvider() {

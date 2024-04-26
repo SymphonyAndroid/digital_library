@@ -2,6 +2,7 @@ package com.symphony.digital_library.component_provider.impl.use_cases;
 
 import android.content.Context;
 
+import com.symphony.digital_library.component_provider.components.Database;
 import com.symphony.digital_library.component_provider.components.UseCases;
 import com.symphony.digital_library.data.entity.Book;
 import com.symphony.digital_library.data.entity.User;

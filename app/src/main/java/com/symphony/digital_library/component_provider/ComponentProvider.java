@@ -2,14 +2,8 @@ package com.symphony.digital_library.component_provider;
 
 import androidx.annotation.NonNull;
 
-import com.symphony.digital_library.component_provider.components.AppSchedulers;
-import com.symphony.digital_library.component_provider.components.Cache;
-import com.symphony.digital_library.component_provider.components.Database;
-import com.symphony.digital_library.component_provider.components.Preferences;
-import com.symphony.digital_library.component_provider.components.UseCases;
+import com.symphony.digital_library.component_provider.components.*;
 import com.symphony.digital_library.data.database.dao.BaseDao;
-import com.symphony.digital_library.data.entity.Book;
-import com.symphony.digital_library.data.entity.User;
 
 import java.util.function.Function;
 
@@ -22,7 +16,7 @@ public interface ComponentProvider {
     @NonNull
     UseCases getUseCases();
     @NonNull
-    <D extends BaseDao<T>, T> Cache<T> getCache(Function<Database, D> function);
+    <D extends BaseDao<R>, R> CacheWithAction<D, R> getCacheWithAction(Function<Database, D> function);
 
 
     class Companion {

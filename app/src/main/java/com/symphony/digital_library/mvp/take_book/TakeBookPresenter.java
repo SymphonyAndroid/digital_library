@@ -1,5 +1,7 @@
 package com.symphony.digital_library.mvp.take_book;
 
+import androidx.dynamicanimation.animation.SpringAnimation;
+
 import com.symphony.digital_library.data.entity.Book;
 import com.symphony.digital_library.data.entity.User;
 import com.symphony.digital_library.data.entity.UserBookCrossRef;
@@ -37,6 +39,6 @@ public class TakeBookPresenter extends BasePresenterImpl<TakeBookMvp.View> imple
     }
 
     private void onError(Throwable throwable) {
-
+        System.out.println("!!!!!!!!!! erroe" + throwable.getLocalizedMessage());
     }
 }
