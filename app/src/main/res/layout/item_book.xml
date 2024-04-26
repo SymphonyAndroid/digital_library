@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/bookCl"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:maxLines="2"
+        android:textSize="16sp"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@+id/takeItBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер" />
+
+    <TextView
+        android:id="@+id/authorTv"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:maxLines="2"
+    android:ellipsize="end"
+    android:textStyle="italic"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="@+id/titleTv"
+    app:layout_constraintStart_toStartOf="@+id/titleTv"
+    app:layout_constraintTop_toBottomOf="@+id/titleTv"
+    tools:text="Джоан Роулінг Джоан Роулінг Джоан Роулінг Джоан Роулінг" />
+
+    <Button
+        android:id="@+id/takeItBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/take_it"
+        app:layout_constraintBottom_toBottomOf="@+id/authorTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/titleTv"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

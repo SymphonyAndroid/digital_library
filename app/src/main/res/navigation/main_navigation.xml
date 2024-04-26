@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.symphony.digital_library.ui.fragment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_searchUserFragment"
+            app:destination="@id/searchUserFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchBookFragment"
+            app:destination="@id/searchBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchBookFragment"
+        android:name="com.symphony.digital_library.ui.fragment.SearchBookFragment"
+        android:label="SearchBookFragment"
+        tools:layout="@layout/fragment_search_book">
+        <action
+            android:id="@+id/action_searchBookFragment_to_takeBookFragment"
+            app:destination="@id/takeBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchUserFragment"
+        android:name="com.symphony.digital_library.ui.fragment.SearchUserFragment"
+        android:label="SearchUserFragment"
+        tools:layout="@layout/fragment_search_user"/>
+    <fragment
+        android:id="@+id/takeBookFragment"
+        android:name="com.symphony.digital_library.ui.fragment.TakeBookFragment"
+        android:label="TakeBookFragment"
+        tools:layout="@layout/fragment_take_book" >
+        <argument
+            android:name="book"
+            app:argType="com.symphony.digital_library.data.entity.Book"
+            app:nullable="false"/>
+    </fragment>
+</navigation>
