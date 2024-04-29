@@ -14,7 +14,7 @@ public interface SearchUserMvp {
 
         void updateBooks(List<Book> books);
 
-        void onEmptyBooks();
+        void onEmptyBooks(String name);
 
         void onBookReturned(String name, String title);
     }

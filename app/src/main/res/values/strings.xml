@@ -14,7 +14,7 @@
     <string name="name_error">Ім\'я не може бути пустим!</string>
     <string name="phone_error">Номер телефону не може бути пустим!</string>
     <string name="book_taken">Користувач %s отримав книжку "%s"!</string>
-    <string name="book_taken_empty">Користувач здав усі книжки!</string>
+    <string name="book_taken_empty">Користувач %s здав усі книжки!</string>
     <string name="book_returned">Користувач %s повернув книжку "%s"!</string>
     <string name="user_books_title">Книжки які в користувача</string>
     <string name="empty_error">Поле не може бути пустим!</string>

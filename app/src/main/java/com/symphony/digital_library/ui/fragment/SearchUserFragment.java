@@ -66,8 +66,8 @@ public class SearchUserFragment
     }
 
     @Override
-    public void onEmptyBooks() {
-        String text = getString(R.string.book_taken_empty);
+    public void onEmptyBooks(String name) {
+        String text = getString(R.string.book_taken_empty, name);
         Toast.makeText(requireContext(), text, Toast.LENGTH_LONG).show();
     }
 

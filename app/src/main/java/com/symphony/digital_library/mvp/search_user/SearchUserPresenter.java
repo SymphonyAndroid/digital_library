@@ -1,6 +1,8 @@
 package com.symphony.digital_library.mvp.search_user;
 
 
+import androidx.annotation.NonNull;
+
 import com.symphony.digital_library.data.entity.Book;
 import com.symphony.digital_library.data.entity.User;
 import com.symphony.digital_library.data.entity.UserBookCrossRef;
@@ -13,6 +15,13 @@ import io.reactivex.disposables.Disposable;
 public class SearchUserPresenter extends BasePresenterImpl<SearchUserMvp.View> implements SearchUserMvp.Presenter {
 
     private User user;
+
+    @Override
+    protected void onViewAttached(@NonNull SearchUserMvp.View view) {
+        super.onViewAttached(view);
+        subscriptions(() -> findUserByName(""));
+    }
+
     @Override
     public void onQueryChanged(String query) {
         subscriptions(() -> findUserByName(query));
@@ -46,7 +55,7 @@ public class SearchUserPresenter extends BasePresenterImpl<SearchUserMvp.View> i
 
     private void onSearchSuccess(List<Book> books) {
         withView(view -> {
-            if (books.isEmpty()) view.onEmptyBooks();
+            if (books.isEmpty()) view.onEmptyBooks(user.getName());
             else view.updateBooks(books);
         });
     }

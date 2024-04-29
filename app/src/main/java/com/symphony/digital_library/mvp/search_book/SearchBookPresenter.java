@@ -1,5 +1,6 @@
 package com.symphony.digital_library.mvp.search_book;
 
+import androidx.annotation.NonNull;
 import androidx.dynamicanimation.animation.SpringAnimation;
 
 import com.symphony.digital_library.data.entity.Book;
@@ -15,6 +16,13 @@ public class SearchBookPresenter extends BasePresenterImpl<SearchBookMvp.View> i
 
     private String name = "";
     private String query = "";
+
+    @Override
+    protected void onViewAttached(@NonNull SearchBookMvp.View view) {
+        super.onViewAttached(view);
+        subscriptions(this::findByQuery);
+    }
+
     @Override
     public void onQueryChanged(String query) {
         this.query = query;
