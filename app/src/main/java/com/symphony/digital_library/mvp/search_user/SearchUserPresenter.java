@@ -61,7 +61,7 @@ public class SearchUserPresenter extends BasePresenterImpl<SearchUserMvp.View> i
                 .returnBook()
                 .invoke(new UserBookCrossRef(book.getId(), user.getName()))
                 .observeOn(getSchedulers().ui())
-                .subscribe(() -> onBookReturnedSuccess(user, book), this::onUserError);
+                .subscribe(() -> onBookReturnedSuccess(user, book), this::onError);
     }
 
     private void onBookReturnedSuccess(User user, Book book) {

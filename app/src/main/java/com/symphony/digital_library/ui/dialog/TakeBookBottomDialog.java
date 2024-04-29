@@ -9,6 +9,7 @@ import com.symphony.digital_library.R;
 import com.symphony.digital_library.databinding.DialogTakeBookBinding;
 import com.symphony.digital_library.ui.base.dialog.BaseBottomSheetDialog;
 import com.symphony.digital_library.util.ViewBindingUtil;
+import com.symphony.digital_library.util.ViewUtil;
 import com.symphony.digital_library.util.function.NotNullConsumer;
 
 public class TakeBookBottomDialog extends BaseBottomSheetDialog<DialogTakeBookBinding> {
@@ -18,10 +19,6 @@ public class TakeBookBottomDialog extends BaseBottomSheetDialog<DialogTakeBookBi
     private NotNullConsumer<String> onPhoneChanged = it -> {};
     public TakeBookBottomDialog(@NonNull Context context) {
         super(context, 0);
-    }
-
-    public TakeBookBottomDialog(@NonNull Context context, int theme) {
-        super(context, theme);
     }
 
     @NonNull
@@ -48,20 +45,25 @@ public class TakeBookBottomDialog extends BaseBottomSheetDialog<DialogTakeBookBi
     @Override
     protected void onShow(@NonNull DialogTakeBookBinding binding) {
         super.onShow(binding);
-        binding.okBtn.setOnClickListener(v -> {
-            withBinding(vb -> {
+        withBinding(vb -> {
+            vb.okBtn.setOnClickListener(v -> {
                 String text = vb.editText.getText() == null ? "" : vb.editText.getText().toString();
                 onOkClick(text);
+            });
+            ViewUtil.onTextChanged(binding.editText, text -> {
+                vb.okBtn.setEnabled(!text.isEmpty());
             });
         });
     }
 
     private void onOkClick(String text) {
-        if (isNameStep) {
-            onNameChanged.accept(text);
-            isNameStep = false;
-            withBinding(vb -> vb.til.setHint(getContext().getString(R.string.phone_hint)));
-        } else onPhoneChanged.accept(text);
+        withBinding(vb -> {
+            if (isNameStep) {
+                onNameChanged.accept(text);
+                isNameStep = false;
+                vb.til.setHint(getContext().getString(R.string.phone_hint));
+            } else onPhoneChanged.accept(text);
+        });
     }
 
     public void setPhone(String phone) {

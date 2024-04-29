@@ -17,4 +17,5 @@
     <string name="book_taken_empty">Користувач здав усі книжки!</string>
     <string name="book_returned">Користувач %s повернув книжку "%s"!</string>
     <string name="user_books_title">Книжки які в користувача</string>
+    <string name="empty_error">Поле не може бути пустим!</string>
 </resources>
