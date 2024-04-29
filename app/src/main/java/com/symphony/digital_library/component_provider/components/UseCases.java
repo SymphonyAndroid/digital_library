@@ -10,12 +10,17 @@ import java.util.List;
 
 import io.reactivex.Completable;
 import io.reactivex.Single;
+import kotlin.Pair;
 
 public interface UseCases {
 
     UseCase<Single<List<Book>>> getAllBooks();
     UseCase<Single<List<User>>> getAllUsers();
     UseCase<Completable> fillingDatabase();
-    UseCase<Single<List<Book>>> findBooks(String query);
-    UseCaseParams<UserBookCrossRef, Completable> bookTaken();
+    UseCaseParams<String, Single<List<Book>>> findBooks();
+    UseCaseParams<String, Single<List<User>>> findUsersByName();
+    UseCaseParams<String, Single<User>> findUserByName();
+    UseCaseParams<Pair<User, Book>, Completable> bookTaken();
+    UseCaseParams<User, Single<List<Book>>> booksByUser();
+    UseCaseParams<UserBookCrossRef, Completable> returnBook();
 }

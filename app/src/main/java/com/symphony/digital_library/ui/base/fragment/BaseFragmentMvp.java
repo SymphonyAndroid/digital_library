@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
@@ -48,6 +49,11 @@ public abstract class BaseFragmentMvp<VB extends ViewBinding, P extends BaseMvp.
     public void onDestroyView() {
         presenter.detachView();
         super.onDestroyView();
+    }
+
+    @Override
+    public void showErrorToast(String message) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     protected void navigateTo(@IdRes int idRes) {

@@ -1,6 +1,7 @@
 package com.symphony.digital_library.ui.base.activity;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,5 +32,10 @@ public abstract class BaseActivityMvp<VB extends ViewBinding, P extends BaseMvp.
     public void onDestroy() {
         presenter.detachView();
         super.onDestroy();
+    }
+
+    @Override
+    public void showErrorToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

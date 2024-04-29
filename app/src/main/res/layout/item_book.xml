@@ -22,20 +22,19 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер Гаррі Поттер" />
 
-    <TextView
-        android:id="@+id/authorTv"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:maxLines="2"
-    android:ellipsize="end"
-    android:textStyle="italic"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="@+id/titleTv"
-    app:layout_constraintStart_toStartOf="@+id/titleTv"
-    app:layout_constraintTop_toBottomOf="@+id/titleTv"
-    tools:text="Джоан Роулінг Джоан Роулінг Джоан Роулінг Джоан Роулінг" />
+    <TextView android:id="@+id/authorTv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/titleTv"
+        app:layout_constraintStart_toStartOf="@+id/titleTv"
+        app:layout_constraintTop_toBottomOf="@+id/titleTv"
+        tools:text="Джоан Роулінг Джоан Роулінг Джоан Роулінг Джоан Роулінг" />
 
     <Button
         android:id="@+id/takeItBtn"
@@ -46,4 +45,5 @@
         app:layout_constraintBottom_toBottomOf="@+id/authorTv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleTv"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

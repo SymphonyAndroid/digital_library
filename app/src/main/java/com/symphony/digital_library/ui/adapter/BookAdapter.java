@@ -3,6 +3,7 @@ package com.symphony.digital_library.ui.adapter;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 
+import com.symphony.digital_library.R;
 import com.symphony.digital_library.data.entity.Book;
 import com.symphony.digital_library.databinding.ItemBookBinding;
 import com.symphony.digital_library.ui.base.adapter.BaseRecyclerAdapter;
@@ -16,9 +17,13 @@ public class BookAdapter extends BaseRecyclerAdapter<ItemBookBinding> {
 
     @NonNull private final List<Book> items;
     @NonNull private final NotNullConsumer<Book> onBookClick;
-    public BookAdapter(@NonNull List<Book> items, @NonNull NotNullConsumer<Book> onBookClick) {
+    private final boolean isTakeBook;
+    public BookAdapter(@NonNull List<Book> items,
+                       @NonNull NotNullConsumer<Book> onBookClick,
+                       boolean isTakeBook) {
         this.items = items;
         this.onBookClick = onBookClick;
+        this.isTakeBook = isTakeBook;
     }
 
     @Override
@@ -36,6 +41,8 @@ public class BookAdapter extends BaseRecyclerAdapter<ItemBookBinding> {
         Book item = items.get(position);
         binding.authorTv.setText(item.getAuthor());
         binding.titleTv.setText(item.getTitle());
+        if (isTakeBook) binding.takeItBtn.setText(R.string.take_it);
+        else binding.takeItBtn.setText(R.string.turn_the_book);
         binding.takeItBtn.setOnClickListener(it -> onBookClick.accept(item));
     }
 

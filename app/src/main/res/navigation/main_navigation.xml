@@ -21,24 +21,10 @@
         android:id="@+id/searchBookFragment"
         android:name="com.symphony.digital_library.ui.fragment.SearchBookFragment"
         android:label="SearchBookFragment"
-        tools:layout="@layout/fragment_search_book">
-        <action
-            android:id="@+id/action_searchBookFragment_to_takeBookFragment"
-            app:destination="@id/takeBookFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_search"/>
     <fragment
         android:id="@+id/searchUserFragment"
         android:name="com.symphony.digital_library.ui.fragment.SearchUserFragment"
         android:label="SearchUserFragment"
         tools:layout="@layout/fragment_search_user"/>
-    <fragment
-        android:id="@+id/takeBookFragment"
-        android:name="com.symphony.digital_library.ui.fragment.TakeBookFragment"
-        android:label="TakeBookFragment"
-        tools:layout="@layout/fragment_take_book" >
-        <argument
-            android:name="book"
-            app:argType="com.symphony.digital_library.data.entity.Book"
-            app:nullable="false"/>
-    </fragment>
 </navigation>

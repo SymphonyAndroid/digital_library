@@ -3,11 +3,18 @@
     <string name="search_book">Пошук книжок</string>
     <string name="search_taken_book">Перегляд узятих книжок</string>
     <string name="search_book_hint">Почніть вводити назву або автора</string>
+    <string name="search_user_hint">Почніть вводити ім\'я користувача</string>
     <string name="take_it">Взяти</string>
+    <string name="turn_the_book">Здати</string>
     <string name="name_hint">Введіть своє ім\'я</string>
     <string name="phone_hint">Введіть свій номер телефону</string>
     <string name="take">Отримати</string>
+    <string name="next">Продовжити</string>
     <string name="taken_hint">Вами обрано:</string>
     <string name="name_error">Ім\'я не може бути пустим!</string>
     <string name="phone_error">Номер телефону не може бути пустим!</string>
+    <string name="book_taken">Користувач %s отримав книжку "%s"!</string>
+    <string name="book_taken_empty">Користувач здав усі книжки!</string>
+    <string name="book_returned">Користувач %s повернув книжку "%s"!</string>
+    <string name="user_books_title">Книжки які в користувача</string>
 </resources>

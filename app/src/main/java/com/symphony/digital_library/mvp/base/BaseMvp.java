@@ -7,7 +7,7 @@ import com.symphony.digital_library.util.function.NotNullConsumer;
 public interface BaseMvp {
 
     interface BaseView {
-
+        void showErrorToast(String message);
     }
 
     interface BasePresenter<V extends  BaseView> {
