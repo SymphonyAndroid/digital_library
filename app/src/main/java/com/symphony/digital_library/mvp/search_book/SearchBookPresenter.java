@@ -78,8 +78,4 @@ public class SearchBookPresenter extends BasePresenterImpl<SearchBookMvp.View> i
     private void onResult(List<Book> result) {
         withView(view -> view.showResult(result));
     }
-
-    private void onError(Throwable throwable) {
-        withView(view -> view.showErrorToast(throwable.getLocalizedMessage()));
-    }
 }

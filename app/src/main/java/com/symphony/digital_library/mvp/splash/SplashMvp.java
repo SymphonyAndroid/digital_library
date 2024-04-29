@@ -6,8 +6,6 @@ public interface SplashMvp {
 
     interface View extends BaseMvp.BaseView {
 
-        void showDatabaseError(String message);
-
         void openMainScreen();
 
     }

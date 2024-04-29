@@ -41,8 +41,5 @@ public class SplashPresenter extends BasePresenterImpl<SplashMvp.View> implement
     private void openMainScreen() {
         withView(SplashMvp.View::openMainScreen);
     }
-    private void onError(Throwable throwable) {
-        withView(view -> view.showDatabaseError(throwable.getLocalizedMessage()));
-    }
 
 }

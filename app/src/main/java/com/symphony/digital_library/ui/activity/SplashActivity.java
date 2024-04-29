@@ -34,11 +34,6 @@ public class SplashActivity extends BaseActivityMvp<ActivitySplashBinding, Prese
     }
 
     @Override
-    public void showDatabaseError(String message) {
-        Snackbar.make(this, getBinding().getRoot(), message, Snackbar.LENGTH_LONG).show();
-    }
-
-    @Override
     public void openMainScreen() {
         startActivity(new Intent(this, MainActivity.class));
     }

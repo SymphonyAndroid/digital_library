@@ -23,15 +23,11 @@ public class SearchUserPresenter extends BasePresenterImpl<SearchUserMvp.View> i
                 .findUsersByName()
                 .invoke(name)
                 .observeOn(getSchedulers().ui())
-                .subscribe(this::onUserSuccess, this::onUserError);
+                .subscribe(this::onUserSuccess);
     }
 
     private void onUserSuccess(List<User> users) {
         withView(view -> view.showUsers(users));
-    }
-
-    private void onUserError(Throwable throwable) {
-
     }
 
     @Override
@@ -45,7 +41,7 @@ public class SearchUserPresenter extends BasePresenterImpl<SearchUserMvp.View> i
                 .booksByUser()
                 .invoke(user)
                 .observeOn(getSchedulers().ui())
-                .subscribe(this::onSearchSuccess, this::onUserError);
+                .subscribe(this::onSearchSuccess, this::onError);
     }
 
     private void onSearchSuccess(List<Book> books) {

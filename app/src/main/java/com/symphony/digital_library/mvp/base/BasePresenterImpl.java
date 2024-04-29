@@ -64,4 +64,8 @@ public abstract class BasePresenterImpl<V extends BaseMvp.BaseView> implements B
     protected final void subscriptions(@NonNull Supplier<Disposable> add) {
         subscriptions.add(add.get());
     }
+
+    protected final void onError(Throwable throwable) {
+        withView(view -> view.showErrorToast(throwable.getLocalizedMessage()));
+    }
 }
