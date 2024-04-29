@@ -37,11 +37,6 @@ public class UseCasesImpl implements UseCases {
     }
 
     @Override
-    public UseCase<Single<List<User>>> getAllUsers() {
-        return new GetAllUsersUseCase();
-    }
-
-    @Override
     public UseCase<Completable> fillingDatabase() {
         return new FillingBooksInDatabaseUseCase(context);
     }

@@ -15,7 +15,6 @@ import kotlin.Pair;
 public interface UseCases {
 
     UseCase<Single<List<Book>>> getAllBooks();
-    UseCase<Single<List<User>>> getAllUsers();
     UseCase<Completable> fillingDatabase();
     UseCaseParams<String, Single<List<Book>>> findBooks();
     UseCaseParams<String, Single<List<User>>> findUsersByName();
