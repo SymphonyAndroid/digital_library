@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 
 import com.symphony.digital_library.component_provider.ComponentProvider;
 import com.symphony.digital_library.component_provider.components.AppSchedulers;
-import com.symphony.digital_library.component_provider.components.Preferences;
 import com.symphony.digital_library.component_provider.components.UseCases;
 import com.symphony.digital_library.util.function.NotNullConsumer;
 
@@ -44,11 +43,6 @@ public abstract class BasePresenterImpl<V extends BaseMvp.BaseView> implements B
     @NonNull
     private ComponentProvider getComponentProvider() {
         return ComponentProvider.Companion.getInstance();
-    }
-
-    @NonNull
-    protected final Preferences getPreferences() {
-        return getComponentProvider().getPreferences();
     }
 
     @NonNull

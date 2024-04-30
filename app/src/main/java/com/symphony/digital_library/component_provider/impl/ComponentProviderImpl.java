@@ -8,7 +8,6 @@ import androidx.room.Room;
 import com.symphony.digital_library.component_provider.ComponentProvider;
 import com.symphony.digital_library.component_provider.components.AppSchedulers;
 import com.symphony.digital_library.component_provider.components.CacheWithAction;
-import com.symphony.digital_library.component_provider.components.Preferences;
 import com.symphony.digital_library.component_provider.components.UseCases;
 import com.symphony.digital_library.component_provider.impl.database.AppDatabase;
 import com.symphony.digital_library.component_provider.impl.database.CacheWithActionImpl;
@@ -16,7 +15,6 @@ import com.symphony.digital_library.component_provider.impl.scheduler.Schedulers
 import com.symphony.digital_library.component_provider.components.Database;
 import com.symphony.digital_library.component_provider.impl.use_cases.UseCasesImpl;
 import com.symphony.digital_library.data.database.dao.BaseDao;
-import com.symphony.digital_library.data.preferences.PreferencesImpl;
 
 import java.util.function.Function;
 
@@ -24,20 +22,12 @@ import java.util.function.Function;
 public class ComponentProviderImpl implements ComponentProvider {
 
     private final Context context;
-    private Preferences preferences;
     private AppSchedulers schedulers;
     private Database database;
     private UseCases useCases;
 
     public ComponentProviderImpl(Context context) {
         this.context = context;
-    }
-
-    @NonNull
-    @Override
-    public Preferences getPreferences() {
-        if (preferences == null) preferences = new PreferencesImpl(context);
-        return preferences;
     }
 
     @NonNull

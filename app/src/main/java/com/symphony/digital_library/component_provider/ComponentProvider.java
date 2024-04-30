@@ -10,8 +10,6 @@ import java.util.function.Function;
 public interface ComponentProvider {
 
     @NonNull
-    Preferences getPreferences();
-    @NonNull
     AppSchedulers getSchedulers();
     @NonNull
     UseCases getUseCases();
