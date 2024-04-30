@@ -64,7 +64,7 @@
       Для цьго викликається метод [`getUseCases().getAllBooks()`](app/src/main/java/com/symphony/digital_library/component_provider/impl/use_cases/UseCasesImpl.java#L35),
       який повертає інтерфейс `UseCase<Single<List<Book>>>`
       (цей інтерфейс описує, завдяки шаблонізації, метод `invoke()` має повернути об'єкт `Single<List<Book>>`).
-      Під час виклику методу `getUseCases().getAllBooks()` створюється та повертається об’єкт `GetAllBooksUseCase`(app/src/main/java/com/symphony/digital_library/component_provider/impl/use_cases/UseCasesImpl.java#L36),
+      Під час виклику методу `getUseCases().getAllBooks()` створюється та повертається об’єкт [`GetAllBooksUseCase`](app/src/main/java/com/symphony/digital_library/component_provider/impl/use_cases/UseCasesImpl.java#L36),
       який реалізує цей інтерфейс. За допомогою цієї взаємодії, за необхідності можна замінити цей об’єкт(`GetAllBooksUseCase`) на будь-який інший, 
       але новий об’єкт має реалізувати інтерфейс `UseCase<Single<List<Book>>>` та повернути відповідне значення.
       Завдяки цьому це ніяким чином не вплине на метод `getAllBooks()` та він завжди буде повертати необхідне значення.
