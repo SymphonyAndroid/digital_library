@@ -70,7 +70,7 @@
       Завдяки цьому це ніяким чином не вплине на метод `getAllBooks()` та він завжди буде повертати необхідне значення.
 
 
-# Design Patterns
+# Else
 - ## MVP (Model-View-Presenter)
   Паттерн реалізовано в класах, розміщених у пакетах [`mvp`](app/src/main/java/com/symphony/digital_library/mvp), [`ui/fragment`](app/src/main/java/com/symphony/digital_library/ui/fragment) та [`ui/activity`](app/src/main/java/com/symphony/digital_library/ui/activity).
   Завдяки цьому паттерну ми можемо розділити бізнес-логіку (Presenter) додатку та користувацький інтерфейс (View), що робить наш проект більш гнучким та дозволяє з легкістю змінити або замінити частину коду не впливаючи один на одного.
@@ -81,7 +81,7 @@
   Клас [`FindBooksUseCase`](app/src/main/java/com/symphony/digital_library/data/use_case/impl/FindBooksUseCase.java)
   описує логіку отримання про книжок за пошуковим запитом користувача 
 
-- ## Reactive Pattern та Observer Pattern
+- ## Reactive та Observer
   Паттерни реалізовано за допомогою бібліотеки rxjava2, та використовується для асинхронності методів, та прослуховування результатів цих методів.
   Прикладом використання буде вже знайомий нам метод
      ```
