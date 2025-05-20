@@ -75,8 +75,8 @@
 ---
 
 ## Документація
-Документація розміщена у папці `javadoc-documentation`
-Посилання: `javadoc-documentation/index.html`
+Документація розміщена у папці [`javadoc-documentation`]
+Посилання: [`javadoc-documentation/index.html`]
 
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0
