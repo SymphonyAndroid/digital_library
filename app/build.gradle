@@ -1,6 +1,14 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.navigation.safeargs)
+    alias(libs.plugins.licensee)
+    alias(libs.plugins.license.report)
+    alias(libs.plugins.dokka)
+}
+
+licensee {
+    allow("Apache-2.0")
+    allow("CC0-1.0")
 }
 
 android {
@@ -31,6 +39,35 @@ android {
     }
 }
 
+afterEvaluate {
+    tasks.register("javadoc", Javadoc) {
+        def variant = android.applicationVariants.find { it.name == "debug" } // или "release"
+
+        // Источники: исходный код + сгенерированные файлы (например, kapt, build/generated)
+        def javaDirs = variant.sourceSets.collect { it.javaDirectories }.flatten()
+        javaDirs += fileTree(dir: "$buildDir/generated/source").files // kapt, databinding и т.д.
+        javaDirs += fileTree(dir: "$buildDir/generated/source/buildConfig/debug").files
+        javaDirs += fileTree(dir: "$buildDir/generated/source/r/debug").files
+        javaDirs += fileTree(dir: "$buildDir/generated/source/r/debug").files
+        javaDirs += fileTree(dir: "$buildDir/generated/data_binding_base_class_source_out/debug/out").files
+
+        source = javaDirs
+
+        classpath += files(variant.javaCompileProvider.get().classpath)
+        classpath += files(android.bootClasspath)
+
+        exclude '**/BuildConfig.java', '**/R.java', '**/R2.java' // можно оставить если хочешь
+
+        options.encoding = 'UTF-8'
+        options.charSet = 'UTF-8'
+        options.links("https://developer.android.com/reference/")
+        options.memberLevel = JavadocMemberLevel.PUBLIC
+
+        failOnError = false
+        destinationDir = file("$buildDir/docs/javadoc")
+    }
+}
+
 dependencies {
 
     implementation libs.appcompat
@@ -45,5 +82,9 @@ dependencies {
     implementation libs.room
     annotationProcessor libs.room.compiler
     implementation libs.gson
+    implementation libs.retrofit2
+    implementation libs.retrofit2.adapter
+    implementation libs.retrofit2.converter
+    implementation libs.okhttp3.interceptor
 
 }

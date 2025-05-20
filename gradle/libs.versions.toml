@@ -10,6 +10,11 @@ rxjava2Java = "2.2.21"
 rxjava2Android = "2.1.1"
 room = "2.6.1"
 gson = "2.10.1"
+retrofit2 = "2.9.0"
+okhttp3 = "5.0.0-alpha.2"
+licensee = "1.8.0"
+license-report = "2.7"
+dokka = "1.9.10"
 
 [libraries]
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -24,7 +29,14 @@ rxjava2-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.
 room = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2" }
+retrofit2-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit2" }
+retrofit2-adapter = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit2" }
+okhttp3-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "navigation" }
+licensee = { id = "app.cash.licensee", version.ref = "licensee" }
+license-report = { id = "com.github.jk1.dependency-license-report", version.ref = "license-report" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
