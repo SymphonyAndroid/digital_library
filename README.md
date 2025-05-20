@@ -80,7 +80,7 @@
 
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0
-Деталі доступні у файлі [`LICENCE.md`]
+Деталі доступні у файлі [`LICENCE.md`](https://github.com/SymphonyAndroid/digital_library/blob/main/LICENSE.md)
 
 ## Перевірка ліцензій
 
