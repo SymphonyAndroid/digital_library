@@ -76,7 +76,6 @@
 
 ## Документація
 Документація розміщена у папці [`javadoc-documentation`](javadoc-documentation)
-Посилання: [javadoc-documentation/index.html](https://github.com/SymphonyAndroid/digital_library/blob/main/javadoc-documentation/index.html)
 
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0
