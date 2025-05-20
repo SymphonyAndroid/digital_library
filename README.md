@@ -74,6 +74,9 @@
 
 ---
 
+## Тестування
+Додаток можна встановити за посиланням [1.0.0](https://github.com/SymphonyAndroid/digital_library/releases/download/1.0.0/app-debug.apk)
+
 ## Документація
 Документація розміщена у папці [`javadoc-documentation`](javadoc-documentation)
 
