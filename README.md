@@ -90,12 +90,20 @@ API документація розміщена за посиланням на [
     - SwaggerHub API Auto Mocking
     - MockApi
 
+## Privacy policy
+Доступно за посиланням [`PRIVACY_POLICY.md`](https://github.com/SymphonyAndroid/digital_library/blob/main/PRIVACY_POLICY.md)
+
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0.
 
 Деталі доступні у файлі [`LICENCE.md`](https://github.com/SymphonyAndroid/digital_library/blob/main/LICENSE.md)
 
 ## Перевірка ліцензій
+
+Звіт перевірок licensee - [`licensee-validation.txt`](https://github.com/SymphonyAndroid/digital_library/blob/main/licensee-validation.txt)
+Звіт перевірок dependency-license - [`dependency-license.html`](https://github.com/SymphonyAndroid/digital_library/blob/main/dependency-license.html)
+
+Виконати знову командами:
 
 ```
 ./gradlew licensee 
