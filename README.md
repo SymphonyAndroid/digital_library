@@ -83,7 +83,7 @@
 ## Swagger
 API документація розміщена за посиланням на [`SwaggerHub`](https://app.swaggerhub.com/apis-docs/artemderzhanivskyy/DigitalLibrary/1.0.0)
 
-**Доступні сервери:**
+- **Доступні сервери:**
     - SwaggerHub API Auto Mocking
     - MockApi
 
