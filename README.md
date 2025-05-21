@@ -68,9 +68,12 @@
 ## Запуск проєкту
 
 1. Клонувати репозиторій.
-2. Встановити середовище для розробки (Android Studio).
-3. Завантажити необхідні залежності за допомогою Gradle(відбудеться автоматично).
-4. Запустити проєкт на Android-пристрої або емуляторі.
+```
+git clone https://github.com/SymphonyAndroid/digital_library.git
+```
+3. Встановити середовище для розробки (Android Studio). (https://developer.android.com/studio)
+4. Завантажити необхідні залежності за допомогою Gradle (відбудеться автоматично).
+5. Запустити проєкт на Android-пристрої або емуляторі.
 
 ---
 
@@ -80,12 +83,27 @@
 ## Документація
 Документація розміщена у папці [`javadoc-documentation`](javadoc-documentation)
 
+## Swagger
+API документація розміщена за посиланням на [`SwaggerHub`](https://app.swaggerhub.com/apis-docs/artemderzhanivskyy/DigitalLibrary/1.0.0)
+
+- **Доступні сервери:**
+    - SwaggerHub API Auto Mocking
+    - MockApi
+
+## Privacy policy
+Доступно за посиланням [`PRIVACY_POLICY.md`](https://github.com/SymphonyAndroid/digital_library/blob/main/PRIVACY_POLICY.md)
+
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0.
 
 Деталі доступні у файлі [`LICENCE.md`](https://github.com/SymphonyAndroid/digital_library/blob/main/LICENSE.md)
 
 ## Перевірка ліцензій
+
+Звіт перевірок licensee - [`licensee-validation.txt`](https://github.com/SymphonyAndroid/digital_library/blob/main/licensee-validation.txt)
+Звіт перевірок dependency-license - [`dependency-license.html`](https://github.com/SymphonyAndroid/digital_library/blob/main/dependency-license.html)
+
+Виконати знову командами:
 
 ```
 ./gradlew licensee 
