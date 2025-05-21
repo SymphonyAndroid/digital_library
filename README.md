@@ -80,6 +80,9 @@
 ## Документація
 Документація розміщена у папці [`javadoc-documentation`](javadoc-documentation)
 
+## Swagger
+API документація розміщена за посиланням https://app.swaggerhub.com/apis-docs/artemderzhanivskyy/DigitalLibrary/1.0.0
+
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0.
 
