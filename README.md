@@ -81,7 +81,11 @@
 Документація розміщена у папці [`javadoc-documentation`](javadoc-documentation)
 
 ## Swagger
-API документація розміщена за посиланням https://app.swaggerhub.com/apis-docs/artemderzhanivskyy/DigitalLibrary/1.0.0
+API документація розміщена за посиланням на [`SwaggerHub`](https://app.swaggerhub.com/apis-docs/artemderzhanivskyy/DigitalLibrary/1.0.0)
+
+Доступні сервери:
+    - SwaggerHub API Auto Mocking
+    - MockApi
 
 ## Ліцензія
 Цей проект ліцензовано за ліцензією Apache 2.0.
