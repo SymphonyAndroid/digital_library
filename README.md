@@ -69,7 +69,7 @@
 
 1. Клонувати репозиторій.
 ```
-git clone https://github.com/VieshchykovOleg/Standardization-and-documentation  
+git clone https://github.com/SymphonyAndroid/digital_library.git
 ```
 3. Встановити середовище для розробки (Android Studio). (https://developer.android.com/studio)
 4. Завантажити необхідні залежності за допомогою Gradle (відбудеться автоматично).
