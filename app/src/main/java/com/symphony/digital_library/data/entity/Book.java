@@ -50,20 +50,20 @@ public class Book implements Serializable {
     /**
      * Рік видання книги.
      */
-    private final int year;
+    private final int date;
 
     /**
      * Основний конструктор для створення об'єкта книги з усіма властивостями.
      *
      * @param title  Назва книги.
      * @param author Автор книги.
-     * @param year   Рік видання книги.
+     * @param date   Рік видання книги.
      * @param id     Унікальний ідентифікатор книги.
      */
-    public Book(@NonNull String title, @NonNull String author, int year, @NonNull String id) {
+    public Book(@NonNull String title, @NonNull String author, int date, @NonNull String id) {
         this.title = title;
         this.author = author;
-        this.year = year;
+        this.date = date;
         this.id = id;
     }
 
@@ -75,11 +75,11 @@ public class Book implements Serializable {
      *
      * @param title  Назва книги.
      * @param author Автор книги.
-     * @param year   Рік видання книги.
+     * @param date   Рік видання книги.
      */
     @Ignore
-    public Book(@NonNull String title, @NonNull String author, int year) {
-        this(title, author, year, title + "/" + author);
+    public Book(@NonNull String title, @NonNull String author, int date) {
+        this(title, author, date, title + "/" + author);
     }
 
     /**
@@ -117,8 +117,8 @@ public class Book implements Serializable {
      *
      * @return Рік видання книги (якщо невідомо, повертає -1).
      */
-    public int getYear() {
-        return year;
+    public int getDate() {
+        return date;
     }
 
     /**

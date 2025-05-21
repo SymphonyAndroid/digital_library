@@ -1,0 +1,89 @@
+openapi: 3.0.0
+info:
+  title: Simple Inventory API
+  description: API of Digital Library project
+  contact:
+    email: zipz221_dao@student.ztu.edu.ua
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/artemderzhanivskyy/DigitalLibrary/1.0.0
+  description: SwaggerHub API Auto Mocking
+- url: https://67ed39024387d9117bbccd32.mockapi.io/api/
+  description: MockApi
+tags:
+- name: books
+- name: users
+paths:
+  /books:
+    get:
+      tags:
+      - books
+      summary: Список книжок
+      description: |
+        За цим ендпоінтом ви отримаєте список усіх доступних книжок
+      responses:
+        "200":
+          description: Успішний результат зі списком усіх доступних книжок
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+        "400":
+          description: Помилка під час виконання запиту
+  /users:
+    get:
+      tags:
+      - users
+      summary: Список користувачів
+      description: |
+        За цим ендпоінтом ви отримаєте список усіх користувачів
+      responses:
+        "200":
+          description: Успішний результат зі списком усіх користувачів
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+        "400":
+          description: Помилка під час виконання запиту
+components:
+  schemas:
+    Book:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        author:
+          type: string
+          example: Джоан Роулінг
+        title:
+          type: string
+          example: Гаррі Поттер
+        date:
+          type: string
+          format: date
+          example: 2016-08-29
+    User:
+      required:
+      - id
+      - name
+      - phone
+      type: object
+      properties:
+        id:
+          type: string
+          example: "1"
+        name:
+          type: string
+          example: Артем Держанівський
+        phone:
+          type: string
+          example: "0930756465"
